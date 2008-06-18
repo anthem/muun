@@ -1,0 +1,2 @@
+Identity := Object clone do (
+)
