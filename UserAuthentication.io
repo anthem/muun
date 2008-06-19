@@ -1,9 +1,9 @@
 UserAuthentication := Object clone do (
 	appendProto(Authentication)
 	appendProto(ObjectEventSource)
-	addObjectEvent("identityUnknown")
-	addObjectEvent("authenticationFailure")
-	addObjectEvent("sessionAuthenticated")
+	addObjectEvent("unknownUserIdentity")
+	addObjectEvent("userAuthenticationFailed")
+	addObjectEvent("userAuthenticated")
 
 	encrypt := method(pw, MD5 clone appendSeq(pw) md5String)
 	
@@ -20,21 +20,21 @@ UserAuthentication := Object clone do (
 	
 	challenge := method(session, 
 		unauthenticatedIdentity := UserIdentity clone
-		session write("Username: ")
-		if(username := session readUntilSeq("\n") asMutable strip,
+		session channel write("Username: ")
+		if(username := session channel readLine,
 			unauthenticatedIdentity setUsername(username)
-			session write("Password: ")
-			if(password := session readUntilSeq("\n") asMutable strip,
+			session channel write("Password: ")
+			if(password := session channel readLine,
 				unauthenticatedIdentity setPassword(password)
-				unauthenticatedIdentity println
-				identity := self authenticate(unauthenticatedIdentity)
-				if(nil == identity,
-					objectEvent("identityUnknown") announce(unauthenticatedIdentity),
-					if(identity == false,
-						objectEvent("authenticationFailure") announce(unauthenticatedIdentity),
-						objectEvent("sessionAuthenticated", identity) announce(unauthenticatedIdentity)
+				authResult := authenticate(unauthenticatedIdentity)
+				if(authResult == nil,
+					objectEvent("unknownUserIdentity") @announce(unauthenticatedIdentity, session),
+					if(authResult == false,
+						objectEvent("userAuthenticationFailed") @announce(unauthenticatedIdentity, session),
+						objectEvent("userAuthenticated") @announce(authResult, session)
 					)
 				)
+				authResult
 			)
 		)
 	)

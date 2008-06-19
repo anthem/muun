@@ -4,7 +4,11 @@ requests for the status of an identity given information about a specific identi
 */
 Authentication := Object clone do (
 	//doc learn(identity) records the identity as a known identity
-	learn := method(identity
+	learn := method(identity,
+		return self
+	)
+	
+	unlearn := method(identity,
 		return self
 	)
 	

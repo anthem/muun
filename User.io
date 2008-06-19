@@ -1,17 +1,21 @@
 /*
-User encapsulates the concept of a "user" as an entity and that entity's
-associated application-specific data which may persist across sessions.
+User encapsulates the concept of a "user" as an entity with an identity and
+with a means of communication (Session)
 */
 
-User := Object clone do (
-	username := "Unnamed"
-
+User := Object clone do (	
 	init := method(
-		self data := RestrictedDataStore clone
-		self name
+		self identity := nil
+		self session := nil
 	)
 	
-	setPassword := method(unencrypted,
-		self encryptedPassword := MD5 clone appendSeq(unencrypted) md5String
+	setIdentity := method(identity,
+		self identity := identity
+		self
+	)
+	
+	setSession := method(session,
+		self session := session
+		self
 	)
 )
