@@ -25,4 +25,10 @@ UserIdentity := Object clone do (
 		self encryptedPassword := MD5 clone appendSeq(unencrypted) md5String
 		self
 	)
+
+	key := method(
+		self username
+	)
+	
+	setKey := getSlot("setUsername")
 )

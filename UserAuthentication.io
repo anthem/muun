@@ -7,18 +7,9 @@ UserAuthentication := Object clone do (
 
 	encrypt := method(pw, MD5 clone appendSeq(pw) md5String)
 	
-	learn := method(identity,
-		users atPut(identity username, identity)
-		self
-	)
-	
-	unlearn := method(identity,
-		user := if(identity hasSlot("username"), identity username, identity)
-		users removeAt(user)
-		self
-	)
-	
 	challenge := method(session, 
+		usernamePrompt := if(call message arguments size >= 2, call evalArgAt(1), "Username: ")
+		passwordPrompt := if(call message arguments size >= 3, call evalArgAt(2), "Password: ")
 		unauthenticatedIdentity := UserIdentity clone
 		session channel write("Username: ")
 		if(username := session channel readLine,
@@ -26,37 +17,57 @@ UserAuthentication := Object clone do (
 			session channel write("Password: ")
 			if(password := session channel readLine,
 				unauthenticatedIdentity setPassword(password)
-				authResult := authenticate(unauthenticatedIdentity)
-				if(authResult == nil,
-					objectEvent("unknownUserIdentity") @announce(unauthenticatedIdentity, session),
-					if(authResult == false,
-						objectEvent("userAuthenticationFailed") @announce(unauthenticatedIdentity, session),
-						objectEvent("userAuthenticated") @announce(authResult, session)
-					)
-				)
-				authResult
+				authenticateAndDispatch(session, unauthenticatedIdentity)
 			)
 		)
 	)
 	
+	authenticateAndDispatch := method(session, unauthenticatedIdentity,
+		authResult := authenticate(unauthenticatedIdentity)
+		if(authResult == nil,
+			objectEvent("unknownUserIdentity") @announce(unauthenticatedIdentity, session),
+			if(authResult == false,
+				objectEvent("userAuthenticationFailed") @announce(unauthenticatedIdentity, session),
+				objectEvent("userAuthenticated") @announce(authResult, session)
+			)
+		)
+		authResult		
+	)
+	
 	authenticate := method(identity,
-		if(self users hasKey(identity username),
-		 	if(self users at(identity username) authenticatesAs(identity),
-				users at(identity username),
+		if(self identityLibrary hasKey(identity username),
+		 	if(self identityLibrary at(identity username) authenticatesAs(identity),
+				identityLibrary at(identity username),
 				false
 			),
 			nil
 		)
 	)
 	
-	init := method(
-		self users := Map clone
+	newPassword := method(session, identity,
+		match := false
+		while(match not,
+			prompt := if(call message arguments size >= 3, call evalArgAt(2), "New password: ")
+			confirmPrompt := if(call message arguments size >= 4, call evalArgAt(3), "Confirm password: ")
+			session channel write(prompt interpolate)
+			password := session channel readLine
+			newIdentity := identity clone setPassword(password)
+			match := confirmPassword(session, newIdentity, confirmPrompt)
+		)
+		return newIdentity
 	)
 	
+	confirmPassword := method(session, identity,
+		prompt := if(call message arguments size >= 3, call evalArgAt(2), "Confirm password: ")
+		session channel write(prompt interpolate)
+		password := session channel readLine
+		return identity clone setPassword(password) authenticatesAs(identity)
+	)
 	
-	//doc adds the users in the users as recognized users.
-	// any conflicts are resolved by using the most recently added information.
-	addUsers := method(users,
-		self users addKeysAndValues(users keys, users values)
+	rechallengePassword := method(session, oldIdentity,
+		prompt := if(call message arguments size >= 3, call evalArgAt(2), "Password: ")
+		session channel write(prompt interpolate)
+		unauthenticatedIdentity := oldIdentity clone setPassword(session channel readLine)
+		authenticateAndDispatch(session, unauthenticatedIdentity)
 	)
 )

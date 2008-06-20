@@ -16,22 +16,17 @@ UserManager := Object clone do (
 		auth objectEvent("unknownUserIdentity") appendListener(block(unauthorizedIdentity, session,
 			session channel write("I don't think I know you. Are you new here (y/n)? ")
 			response := session channel readLine
-			if(response == "yes") then (
-				session channel write("Please confirm your password, then: ")
-				userIdentity := UserIdentity clone withUsernameAndPassword(unauthorizedIdentity username, session channel readLine)
-				if(user encryptedPassword == unauthorizedIdentity encryptedPassword) then (
-					self authentication learn(userIdentity)
-					session channel writeln("Welcome.")
-					user := User clone setIdentity(userIdentity) setSession(session)
-					objectEvent("newUserIdentity") @announce(user)
-					objectEvent("userJoined") @@announce(user)
-				) else (
-					session channel writeln("That password doesn't match.")
-					self authentication challenge(session)
+			if(list("y", "yes") contains(response asMutable lowercase)) then (
+				if(self authentication confirmPassword(session, unauthorizedIdentity, "Please confirm your password: ") not,
+					self authentication newPassword(session, unauthorizedIdentity, "Those passwords do not match. Please enter a new password: ", "Please confirm that password: ")
 				)
+				self authentication identityLibrary learn(unauthorizedIdentity)
+				session channel writeln("Welcome.")
+				user := User clone setIdentity(unauthorizedIdentity) setSession(session)
+				objectEvent("newUserIdentity") @@announce(user)
+				objectEvent("userJoined") @@announce(user)						
 			) else (
-				session channel writeln("What is your name, then? ")
-				self authentication challenge(session)
+				self authentication challenge(session, "What is your name, then? ")
 			)
 		))
 
@@ -41,7 +36,15 @@ UserManager := Object clone do (
 		))
 
 		auth objectEvent("userAuthenticationFailed") appendListener(block(unauthorizedIdentity, session, 
-			"Failed" println
+			unauthorizedIdentity loginAttempts := if(unauthorizedIdentity hasSlot("loginAttempts"),
+				unauthorizedIdentity loginAttempts + 1,
+				1)
+			if(unauthorizedIdentity loginAttempts >= 3) then (
+				session channel writeln("Sorry, too many login attempts.")
+				session channel close
+			) else (
+				self authentication rechallengePassword(session, unauthorizedIdentity, "Invalid password. Please try again: ")
+			)
 		))
 		self
 	)
