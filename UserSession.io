@@ -4,7 +4,7 @@ UserSession := Session clone do(
 			readUntilSeq("\n") asMutable strip
 		)
 		writeln := method(
-			self doMessage(Message clone setName("write") setArguments(call message arguments))
+			self performWithArgList("write", call message argsEvaluatedIn(call sender))
 			self write("\r\n")
 		)
 	)

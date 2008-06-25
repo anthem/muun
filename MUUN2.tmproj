@@ -3,148 +3,204 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>IdentityLibrary.io</string>
+	<string>UserManager.io</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>MUUN.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T04:14:35Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>MUUNSessionSource.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T03:10:39Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>MUUNTelnetServer.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T03:10:42Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>UserManager.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T06:43:41Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>ObjectEvent.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-19T07:03:42Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>ObjectEventSource.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T03:10:38Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>UserIdentity.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T06:22:12Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
 			<string>TelnetSession.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-20T03:10:41Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>Session.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T03:10:37Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>IdentityLibrary.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T06:43:41Z</date>
-			<key>selected</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>UserAuthentication.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T06:30:26Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>Authentication.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T04:28:24Z</date>
+			<date>2008-06-24T03:10:49Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>UUIDIdentity.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-17T06:28:00Z</date>
+			<date>2008-06-24T03:10:47Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>TransientUserLibrary.io</string>
+			<string>Controller.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-19T06:59:04Z</date>
+			<date>2008-06-25T05:52:05Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
-			<string>NullAuthentication.io</string>
+			<string>ControllerManager.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-20T04:14:48Z</date>
+			<date>2008-06-25T05:52:28Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>run.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-20T04:38:31Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>UserSession.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T05:48:36Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>User.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T05:32:25Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>UserSource.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-19T03:16:04Z</date>
+			<date>2008-06-25T05:57:35Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>Comparable.io</string>
 			<key>lastUsed</key>
-			<date>2008-06-20T03:58:57Z</date>
+			<date>2008-06-24T03:10:29Z</date>
 		</dict>
 		<dict>
-			<key>filename</key>
-			<string>Identity.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T04:21:06Z</date>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
+					<string>MUUN.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:55:21Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>MUUNSessionSource.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:55:40Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>MUUNTelnetServer.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:58:13Z</date>
+				</dict>
+			</array>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>MUUN</string>
 		</dict>
 		<dict>
-			<key>filename</key>
-			<string>MUUNUserLibrary.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T05:31:32Z</date>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
+					<string>UserManager.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:57:35Z</date>
+					<key>selected</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>UserIdentity.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:17:19Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>UserAuthentication.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:58:40Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>UserSession.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:54:22Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>UserControllerSource.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:18:38Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>User.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T02:51:23Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>PDBPersistenceManager.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:56:19Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>PersistentUserLibrary.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:55:58Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>UserLibrary.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:17:22Z</date>
+				</dict>
+			</array>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>User</string>
 		</dict>
 		<dict>
-			<key>filename</key>
-			<string>UserLibrary.io</string>
-			<key>lastUsed</key>
-			<date>2008-06-20T04:38:36Z</date>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
+					<string>PersistenceManager.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:56:28Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Session.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T04:10:23Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>IdentityLibrary.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-25T05:03:39Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Authentication.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-20T04:28:24Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>Identity.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-20T04:21:06Z</date>
+				</dict>
+			</array>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>Abstract</string>
+		</dict>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>IRC</string>
+		</dict>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>filename</key>
+					<string>ObjectEventSource.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:59:08Z</date>
+				</dict>
+				<dict>
+					<key>filename</key>
+					<string>ObjectEvent.io</string>
+					<key>lastUsed</key>
+					<date>2008-06-24T03:33:43Z</date>
+				</dict>
+			</array>
+			<key>expanded</key>
+			<true/>
+			<key>name</key>
+			<string>ObjectEvent</string>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -179,6 +235,34 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>Controller.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>31</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>ControllerManager.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>Identity.io</key>
 		<dict>
 			<key>caret</key>
@@ -198,9 +282,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>19</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -212,39 +296,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>6</integer>
 				<key>line</key>
-				<integer>21</integer>
+				<integer>23</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>21</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>14</integer>
-				<key>line</key>
-				<integer>21</integer>
-			</dict>
 		</dict>
 		<key>MUUNSessionSource.io</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>9</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -258,35 +326,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>MUUNUserLibrary.io</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>NullAuthentication.io</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>40</integer>
-				<key>line</key>
-				<integer>4</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -298,9 +338,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>25</integer>
+				<integer>104</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>35</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -312,9 +352,51 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>51</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>3</integer>
+				<integer>5</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>PDBPersistenceManager.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>14</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>PersistenceManager.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>37</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>PersistentUserLibrary.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>56</integer>
+				<key>line</key>
+				<integer>11</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -326,9 +408,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>25</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -343,20 +425,6 @@
 				<integer>1</integer>
 				<key>line</key>
 				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>TransientUserLibrary.io</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>11</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -382,9 +450,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>32</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>11</integer>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -396,14 +464,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>11</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>56</integer>
+				<integer>2</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>27</integer>
+			<integer>0</integer>
+		</dict>
+		<key>UserControllerSource.io</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>UserIdentity.io</key>
 		<dict>
@@ -412,7 +494,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>18</integer>
+				<integer>2</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -424,9 +506,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>41</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -438,37 +520,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>27</integer>
+				<integer>51</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>3</integer>
+			<integer>14</integer>
 		</dict>
 		<key>UserSession.io</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>20</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>5</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>UserSource.io</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>1</integer>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -480,30 +548,33 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>31</integer>
+				<integer>40</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>26</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>11</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>run.io</string>
+		<string>ControllerManager.io</string>
+		<string>UserControllerSource.io</string>
+		<string>Controller.io</string>
 		<string>MUUN.io</string>
-		<string>NullAuthentication.io</string>
 		<string>UserManager.io</string>
 		<string>ObjectEventSource.io</string>
 		<string>ObjectEvent.io</string>
-		<string>TransientUserLibrary.io</string>
-		<string>Authentication.io</string>
 		<string>UserAuthentication.io</string>
-		<string>MUUNUserLibrary.io</string>
+		<string>UUIDIdentity.io</string>
 		<string>IdentityLibrary.io</string>
 		<string>UserLibrary.io</string>
+		<string>PersistentUserLibrary.io</string>
+		<string>PersistenceManager.io</string>
+		<string>PDBPersistenceManager.io</string>
 		<string>User.io</string>
 		<string>UserSession.io</string>
 		<string>Session.io</string>
@@ -511,13 +582,12 @@
 		<string>UserIdentity.io</string>
 		<string>Identity.io</string>
 		<string>Comparable.io</string>
-		<string>UserSource.io</string>
 		<string>MUUNTelnetServer.io</string>
 		<string>MUUNSessionSource.io</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{321, 1}, {944, 874}}</string>
+	<string>{{197, 154}, {944, 874}}</string>
 </dict>
 </plist>

@@ -1,2 +1,0 @@
-MUUNUserLibrary := Object clone do (
-)

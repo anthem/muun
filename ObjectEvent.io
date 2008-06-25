@@ -12,6 +12,11 @@ ObjectEvent := Object clone do (
 		self
 	)
 	
+	prependListener := method(blk,
+		self listeners prepend(blk)
+		self
+	)
+
 	appendListener := method(blk,
 		self listeners append(blk)
 		self

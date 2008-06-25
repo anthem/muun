@@ -1,27 +1,27 @@
 /*
 The MUUN object is the master controller that organizes the individual components.
 */
+
+
 MUUN := Object clone do (
  	init := method(
-		// persistent data sources
-		self userSources := List clone
-		self objectLibraries := List clone
-		
-		// transient data
-		self users := List clone
-		self objects := List clone
+		self controllerSources := List clone
+		self world := Object clone
 	)
 	
-	run := method(
+	setWorld := method(world,
+		nil
 	)
 	
-	addObjectLibrary := method(library,
-		1
+	addControllerSource := method(source,
+		self controllerSources append(source)
 	)
 	
-	addUserSource := method(source,
-		source handleUser := method(user, userSource,
-			users append(user)
+	start := method(
+		while(true,
+			// read events from controller and enact them within the world
+			// receive events from the world and enact them on the target controllers
+			nil
 		)
 	)
 )

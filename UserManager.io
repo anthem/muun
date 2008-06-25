@@ -17,16 +17,16 @@ UserManager := Object clone do (
 			session channel write("I don't think I know you. Are you new here (y/n)? ")
 			response := session channel readLine
 			if(list("y", "yes") contains(response asMutable lowercase)) then (
-				if(self authentication confirmPassword(session, unauthorizedIdentity, "Please confirm your password: ") not,
-					self authentication newPassword(session, unauthorizedIdentity, "Those passwords do not match. Please enter a new password: ", "Please confirm that password: ")
+				if(authentication confirmPassword(session, unauthorizedIdentity, "Please confirm your password: ") not,
+					authentication newPassword(session, unauthorizedIdentity, "Those passwords do not match. Please enter a new password: ", "Please confirm that password: ")
 				)
-				self authentication identityLibrary learn(unauthorizedIdentity)
+				authentication identityLibrary learn(unauthorizedIdentity)
 				session channel writeln("Welcome.")
 				user := User clone setIdentity(unauthorizedIdentity) setSession(session)
 				objectEvent("newUserIdentity") @@announce(user)
 				objectEvent("userJoined") @@announce(user)						
 			) else (
-				self authentication challenge(session, "What is your name, then? ")
+				authentication challenge(session, "What is your name, then? ")
 			)
 		))
 
@@ -43,13 +43,18 @@ UserManager := Object clone do (
 				session channel writeln("Sorry, too many login attempts.")
 				session channel close
 			) else (
-				self authentication rechallengePassword(session, unauthorizedIdentity, "Invalid password. Please try again: ")
+				authentication rechallengePassword(session, unauthorizedIdentity, "Invalid password. Please try again: ")
 			)
 		))
 		self
 	)
 	
+	setBanner := method(bannerStr,
+		self banner := bannerStr
+	)
+	
 	initializeSession := method(session,
-		self authentication challenge(session)
+		if(hasSlot("banner"), session channel writeln(banner))
+		authentication challenge(session)
 	)
 )
