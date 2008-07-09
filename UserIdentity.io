@@ -1,9 +1,7 @@
-UserIdentity := Object clone do (
-	appendProto(Identity)
-
-	username := "Unnamed"
+UserIdentity := Identity clone do (	
+	username ::= "Unnamed"
 	encryptedPassword := MD5 clone appendSeq("") md5String
-	
+
 	withUsername := method(username,
 		UserIdentity clone setUsername(username)
 	)
@@ -16,18 +14,13 @@ UserIdentity := Object clone do (
 		self username == other username and self encryptedPassword == other encryptedPassword
 	)
 	
-	setUsername := method(username,
-		self username := username
-		self
-	)
-	
 	setPassword := method(unencrypted,
 		self encryptedPassword := MD5 clone appendSeq(unencrypted) md5String
 		self
 	)
 
 	key := method(
-		self username
+		username
 	)
 	
 	setKey := getSlot("setUsername")

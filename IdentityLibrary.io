@@ -1,19 +1,27 @@
-IdentityLibrary := Map clone do (
+IdentityLibrary := Object clone do (
 	init := method(
-		super(init)
+		self store := Map clone
 	)
 
 	learn := method(identity,
-		atPut(identity key, identity)
+		self store atPut(identity key, identity)
 		self
 	)
 
 	unlearn := method(identity,
-		removeAt(if(identity hasSlot("key"), identity key, identity asString))
+		self store removeAt(if(identity hasSlot("key"), identity key, identity))
 		self
 	)
 	
+	hasKey := method(key,
+		self store hasKey(key)
+	)
+
 	hasIdentity := method(identity,
-		hasKey(identity key) and identity authenticatesAs(at(identity key))
+		self store hasKey(identity key) and self store at(identity key) authenticatesAs(identity)
+	)
+	
+	at := method(identity,
+		self store at(if(identity hasSlot("key"), identity key, identity))
 	)
 )

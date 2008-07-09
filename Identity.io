@@ -1,9 +1,7 @@
 Identity := Object clone do (
-	init := method(
-		key := ""
-	)
+	key ::= ""
 	
 	authenticatesAs := method(other,
-		self key == other key
+		key == other key
 	)	
 )

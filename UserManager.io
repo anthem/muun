@@ -31,7 +31,7 @@ UserManager := Object clone do (
 		))
 
 		auth objectEvent("userAuthenticated") appendListener(block(identity, session, 
-			objectEvent("userJoined") @announce(User clone setIdentity(identity) setSession(session))
+			objectEvent("userJoined") @@announce(User clone setIdentity(identity) setSession(session))
 			"Connected" println
 		))
 

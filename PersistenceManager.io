@@ -10,8 +10,28 @@ PersistenceManager := Object clone do (
 	close := method(
 		nil
 	)
+	
+	store := method(name,
+		nil
+	)
+	
+	getOrCreateStore := method(name,
+		nil
+	)
+	
+	newStore := method(name,
+		nil
+	)
+	
+	hasStore := method(name,
+		false
+	)
+	
+	getStore := method(name,
+		nil
+	)
 
-	registerStore := method(name, store,
+	registerSlots := method(object,
 		nil
 	)
 )

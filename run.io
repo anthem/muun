@@ -10,13 +10,7 @@ muun := MUUN clone
 
 // set up the persistence manager that will handle the creation, sync and teardown
 // of persistence data stores
-pm := PDBPersistenceManager clone do (
-	// set the path to the persistence file
-	setPath(config at("persistenceFile"))
-	
-	// and open the database to ready it for use
-	open
-)
+pm := PDBPersistenceManager withPath(config at("persistenceFile"))
 
 server := MUUNTelnetServer clone do (
 	setPort(config at("telnetPort"))
@@ -48,6 +42,12 @@ userControllerSource := UserControllerSource clone
 userControllerSource setUserSource(userManager)
 controllerManager := ControllerManager clone addControllerSource(userControllerSource)
 */ 
+
+o := Object clone
+o pSlots(justatest)
+o justatest := "test!"
+PDB root atPut("testing", o)
+PDB sync
 
 // fixme: put this elsewhere and don't block. instead make MUUN run block
 server start

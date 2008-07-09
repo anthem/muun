@@ -3,12 +3,34 @@ UserLibrary coordinates the connection, authentication and data access and manag
 */
 
 PersistentUserLibrary := UserLibrary clone do (
+	storeName := "userLibrary"
 	persistenceManager := nil
+	
+	init := method(
+		self store := PMap clone
+	)
+	
+	learn := method(ident,
+		persistenceManager registerSlots(ident, username, encryptedPassword)
+		super(learn(ident))
+		persistenceManager sync
+		self
+	)
+	
+	unlearn := method(ident,
+		resend
+		persistenceManager sync
+		self
+	)
+	
+	hasKey := method(key,
+		self store at(key)
+		self store hasSlot(key)
+	)
 
 	setPersistenceManager := method(mgr,
 		self persistenceManager := mgr
-		store := PMap clone
-		prependProto(store) // prepend the store so that all our mappings go into the PMap
-		persistenceManager registerStore("userLibrary", store)
+		self store = persistenceManager getOrCreateStore(storeName, store)
+		self
 	)
 )

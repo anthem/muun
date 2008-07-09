@@ -25,18 +25,18 @@ UserAuthentication := Object clone do (
 	authenticateAndDispatch := method(session, unauthenticatedIdentity,
 		authResult := authenticate(unauthenticatedIdentity)
 		if(authResult == nil,
-			objectEvent("unknownUserIdentity") @announce(unauthenticatedIdentity, session),
+			objectEvent("unknownUserIdentity") @@announce(unauthenticatedIdentity, session),
 			if(authResult == false,
-				objectEvent("userAuthenticationFailed") @announce(unauthenticatedIdentity, session),
-				objectEvent("userAuthenticated") @announce(authResult, session)
+				objectEvent("userAuthenticationFailed") @@announce(unauthenticatedIdentity, session),
+				objectEvent("userAuthenticated") @@announce(authResult, session)
 			)
 		)
-		authResult		
+		authResult
 	)
 	
 	authenticate := method(identity,
 		if(self identityLibrary hasKey(identity username),
-		 	if(self identityLibrary at(identity username) authenticatesAs(identity),
+		 	if(identityLibrary at(identity username) authenticatesAs(identity),
 				identityLibrary at(identity username),
 				false
 			),
