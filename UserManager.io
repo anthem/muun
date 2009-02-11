@@ -1,3 +1,7 @@
+/*
+UserManager is a Manager service that accepts users from a UserSource and exposes the
+users via the ObjectEvent announcement interface. The UserManager does not retain the users.
+*/
 UserManager := Object clone do (
 	appendProto(ObjectEventSource)
 	addObjectEvent("userJoined")
@@ -24,7 +28,7 @@ UserManager := Object clone do (
 				session channel writeln("Welcome.")
 				user := User clone setIdentity(unauthorizedIdentity) setSession(session)
 				objectEvent("newUserIdentity") @@announce(user)
-				objectEvent("userJoined") @@announce(user)						
+				objectEvent("userJoined") @@announce(user)
 			) else (
 				authentication challenge(session, "What is your name, then? ")
 			)
@@ -48,13 +52,9 @@ UserManager := Object clone do (
 		))
 		self
 	)
-	
-	setBanner := method(bannerStr,
-		self banner := bannerStr
-	)
-	
+
 	initializeSession := method(session,
-		if(hasSlot("banner"), session channel writeln(banner))
+		authentication greet(session)
 		authentication challenge(session)
 	)
 )

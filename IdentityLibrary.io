@@ -1,27 +1,11 @@
-IdentityLibrary := Object clone do (
-	init := method(
-		self store := Map clone
-	)
+/*
+IdentityLibrary maintains a Library that stores Identities. 
+*/
 
-	learn := method(identity,
-		self store atPut(identity key, identity)
-		self
-	)
-
-	unlearn := method(identity,
-		self store removeAt(if(identity hasSlot("key"), identity key, identity))
-		self
-	)
-	
-	hasKey := method(key,
-		self store hasKey(key)
-	)
-
+IdentityLibrary := Library clone do (
+	//doc hasIdentity returns true or false indicating whether the given identity is stored in the Library.
+	//doc if identity's username exist but the passwords do not match, false is returned
 	hasIdentity := method(identity,
-		self store hasKey(identity key) and self store at(identity key) authenticatesAs(identity)
-	)
-	
-	at := method(identity,
-		self store at(if(identity hasSlot("key"), identity key, identity))
+		hasKey(identity key) and at(identity key) authenticatesAs(identity)
 	)
 )

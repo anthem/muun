@@ -2,7 +2,7 @@
 UserLibrary coordinates the connection, authentication and data access and management of a set of users
 */
 
-PersistentUserLibrary := UserLibrary clone do (
+PersistentUserLibrary := Library clone do (
 	storeName := "userLibrary"
 	persistenceManager := nil
 	
@@ -16,7 +16,7 @@ PersistentUserLibrary := UserLibrary clone do (
 		persistenceManager sync
 		self
 	)
-	
+
 	unlearn := method(ident,
 		resend
 		persistenceManager sync

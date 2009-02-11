@@ -1,6 +1,6 @@
 /*
 User encapsulates the concept of a "user" as an entity with an identity and
-with a means of communication (Session)
+with a means of communication (Session). 
 */
 
 User := Object clone do (	

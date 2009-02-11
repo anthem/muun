@@ -7,7 +7,7 @@ UUIDIdentity := Object clone do (
 	)
 
 	withUUID := method(uuid,
-		id := Identity clone
+		id := self clone
 		id uuid := uuid
 		return id
 	)

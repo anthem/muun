@@ -3,5 +3,5 @@ Identity := Object clone do (
 	
 	authenticatesAs := method(other,
 		key == other key
-	)	
+	)
 )

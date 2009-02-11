@@ -7,7 +7,11 @@ UserAuthentication := Object clone do (
 
 	encrypt := method(pw, MD5 clone appendSeq(pw) md5String)
 	
-	challenge := method(session, 
+	greet := method(session,
+		if(hasSlot("banner"), session channel writeln(banner))
+	)
+	
+	challenge := method(session,
 		usernamePrompt := if(call message arguments size >= 2, call evalArgAt(1), "Username: ")
 		passwordPrompt := if(call message arguments size >= 3, call evalArgAt(2), "Password: ")
 		unauthenticatedIdentity := UserIdentity clone
@@ -69,5 +73,10 @@ UserAuthentication := Object clone do (
 		session channel write(prompt interpolate)
 		unauthenticatedIdentity := oldIdentity clone setPassword(session channel readLine)
 		authenticateAndDispatch(session, unauthenticatedIdentity)
+	)
+	
+	
+	setBanner := method(bannerStr,
+		self banner := bannerStr
 	)
 )
