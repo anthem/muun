@@ -1,0 +1,1 @@
+sessions not handled correctly (not removed). closure seems to persist.
